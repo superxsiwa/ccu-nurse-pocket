@@ -147,7 +147,7 @@ sequenceDiagram
       const svgUrl = URL.createObjectURL(svgBlob);
       const downloadLink = document.createElement("a");
       downloadLink.href = svgUrl;
-      downloadLink.download = "a-nurse-bpmn-workflow.svg";
+      downloadLink.download = "ccu-nurse-pocket-bpmn-workflow.svg";
       document.body.appendChild(downloadLink);
       downloadLink.click();
       document.body.removeChild(downloadLink);
@@ -185,7 +185,7 @@ sequenceDiagram
         const png = canvas.toDataURL("image/png");
         const downloadLink = document.createElement("a");
         downloadLink.href = png;
-        downloadLink.download = "a-nurse-bpmn-workflow.png";
+        downloadLink.download = "ccu-nurse-pocket-bpmn-workflow.png";
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);

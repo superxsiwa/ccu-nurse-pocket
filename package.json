@@ -1,5 +1,5 @@
 {
-  "name": "a-nurse",
+  "name": "ccu-nurse-pocket",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/superxsiwa/a-nurse.git"
+    "url": "git+https://github.com/superxsiwa/ccu-nurse-pocket.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/superxsiwa/a-nurse/issues"
+    "url": "https://github.com/superxsiwa/ccu-nurse-pocket/issues"
   },
-  "homepage": "https://github.com/superxsiwa/a-nurse#readme"
+  "homepage": "https://github.com/superxsiwa/ccu-nurse-pocket#readme"
 }
