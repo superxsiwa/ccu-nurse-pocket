@@ -236,65 +236,6 @@
 
       <!-- Quick Role Login (ทดสอบระบบสะดวก - ใช้ตอนพัฒนาเท่านั้น) -->
       <div class="mt-4 pt-3.5 border-t border-slate-100">
-        <div class="flex items-center justify-between mb-1.5">
-          <span class="text-[11px] font-bold text-slate-700 flex items-center gap-1">
-            <i class="fa-solid fa-key text-amber-500"></i> บัญชีทดสอบระบบ:
-          </span>
-          <span class="text-[9px] bg-amber-50 text-amber-700 font-semibold px-2 py-0.5 rounded-full border border-amber-200">
-            <i class="fa-solid fa-code text-[8px]"></i> ใช้ตอนพัฒนาเท่านั้น
-          </span>
-        </div>
-        <p class="text-[10px] text-slate-400 mb-2 leading-tight">คลิกเพื่อล็อกอินตามบทบาททันที (จะถูกนำออกเมื่อขึ้นระบบจริง)</p>
-        <div class="grid grid-cols-2 gap-1.5 text-left">
-          <!-- 1. Admin (Fah Payap) -->
-          <button type="button" onclick="quickFillLogin('admin', '1234')" class="p-2 rounded-xl bg-purple-50 hover:bg-purple-100/80 border border-purple-200 text-left transition-all active:scale-[0.98]">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-bold text-purple-700 flex items-center gap-1">
-                <i class="fa-solid fa-user-shield"></i> ผู้ดูแล (Admin)
-              </span>
-              <span class="text-[8px] bg-purple-200/70 text-purple-800 font-mono px-1 rounded">1234</span>
-            </div>
-            <div class="text-[9px] text-purple-600 font-mono mt-0.5">user: <strong>admin</strong></div>
-            <div class="text-[8px] text-slate-500 truncate">พว.ฟ้าพายัพ (ผู้ดูแลระบบ)</div>
-          </button>
-
-          <!-- 2. Senior Nurse -->
-          <button type="button" onclick="quickFillLogin('senior', 'ccu7')" class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100/80 border border-amber-200 text-left transition-all active:scale-[0.98]">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-bold text-amber-800 flex items-center gap-1">
-                <i class="fa-solid fa-user-nurse"></i> พยาบาลรุ่นพี่
-              </span>
-              <span class="text-[8px] bg-amber-200/70 text-amber-900 font-mono px-1 rounded">ccu7</span>
-            </div>
-            <div class="text-[9px] text-amber-700 font-mono mt-0.5">user: <strong>senior</strong></div>
-            <div class="text-[8px] text-slate-500 truncate">พว.วิยะดา (จัดการคลัง CPG)</div>
-          </button>
-
-          <!-- 3. Junior Nurse (CCU Nurse) -->
-          <button type="button" onclick="quickFillLogin('nurse', 'ccu7')" class="p-2 rounded-xl bg-sky-50 hover:bg-sky-100/80 border border-sky-200 text-left transition-all active:scale-[0.98]">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-bold text-sky-700 flex items-center gap-1">
-                <i class="fa-solid fa-heart-pulse"></i> พยาบาลรุ่นน้อง
-              </span>
-              <span class="text-[8px] bg-sky-200/70 text-sky-800 font-mono px-1 rounded">ccu7</span>
-            </div>
-            <div class="text-[9px] text-sky-600 font-mono mt-0.5">user: <strong>nurse</strong></div>
-            <div class="text-[8px] text-slate-500 truncate">พว.พยาบาล CCU (ผู้ใช้ข้างเตียง)</div>
-          </button>
-
-          <!-- 4. Pending Nurse -->
-          <button type="button" onclick="quickFillLogin('somying', 'ccu7')" class="p-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-left transition-all active:scale-[0.98]">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-bold text-slate-600 flex items-center gap-1">
-                <i class="fa-solid fa-hourglass-half text-amber-500"></i> รออนุมัติ
-              </span>
-              <span class="text-[8px] bg-slate-200 text-slate-700 font-mono px-1 rounded">ccu7</span>
-            </div>
-            <div class="text-[9px] text-slate-500 font-mono mt-0.5">user: <strong>somying</strong></div>
-            <div class="text-[8px] text-amber-600 truncate">พว.สมหญิง (บล็อกรออนุมัติ)</div>
-          </button>
-        </div>
-
         <div class="mt-3 pt-2 border-t border-slate-100 text-center">
           <p class="text-[10px] text-slate-400 flex items-center justify-center gap-1">
             <i class="fa-solid fa-shield-halved text-emerald-600"></i> ระบบความปลอดภัย CCU ศิริราช
@@ -2190,12 +2131,7 @@
     let currentCatalog = getKnowledgeCatalog();
 
     // ===== USER MANAGEMENT & AUTH (Admin / Senior / Nurse / Pending Users) =====
-    const DEFAULT_USERS = [
-      { id: 'u-1', user: 'admin', pass: '1234', name: 'พว.ฟ้าพายัพ อินถาเครือ (Admin)', exp: 'CCU RN / Admin', role: 'admin', status: 'active', registeredAt: '2026-10-01', avatar: null },
-      { id: 'u-senior', user: 'senior', pass: 'ccu7', name: 'พว.วิยะดา (พยาบาลรุ่นพี่/Incharge)', exp: '>5ปี', role: 'senior', status: 'active', registeredAt: '2026-10-02', avatar: null },
-      { id: 'u-3', user: 'nurse', pass: 'ccu7', name: 'พว.พยาบาล CCU เวรเช้า', exp: '1-3ปี', role: 'nurse', status: 'active', registeredAt: '2026-10-08', avatar: null },
-      { id: 'u-4', user: 'somying', pass: 'ccu7', name: 'พว.สมหญิง วงศ์ใจ (รออนุมัติ)', exp: '1-3ปี', role: 'nurse', status: 'pending', registeredAt: '2026-10-10', avatar: null }
-    ];
+    const DEFAULT_USERS = [];
 
     const USERS_DB_VERSION = "v2.2";
     function getUsers() {
