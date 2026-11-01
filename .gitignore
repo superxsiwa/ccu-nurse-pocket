@@ -5,3 +5,8 @@ documents/knowledge/EKG/2 พ.ย.-อ.ศุภชัย.pdf
 documents/knowledge/EKG/1 พ.ย.65-อ.ศุภชัย.pdf
 documents/knowledge/TAVI/Nursing Management TAVR พว.วิยะดา.pdf
 documents/knowledge/TAVI/Post TAVR Nursing care OPD follow up (Part III) พว.ศศิวรรณ.pdf
+
+# Knowledge documents are internal to the ward: never publish them from this repo
+documents/knowledge/
+*.pdf
+*.pptx
